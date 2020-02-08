@@ -79,4 +79,62 @@ $(document).ready(function() {
   };
 
   $("#text").ticker();
+  //Firebase
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAw6jk8rBMC0lwxAVOWYKY8tEJUmBuhZZw",
+    authDomain: "train-station-3a2bf.firebaseapp.com",
+    databaseURL: "https://train-station-3a2bf.firebaseio.com",
+    projectId: "train-station-3a2bf",
+    storageBucket: "train-station-3a2bf.appspot.com",
+    messagingSenderId: "891986214586",
+    appId: "1:891986214586:web:e7d5fdce4470ff8cbb0c83",
+    measurementId: "G-XGKGWP6WXQ"
+  };
+  firebase.initializeApp(config);
+
+  //Variable to reference to database
+  var database = firebase.database();
+
+  //Initial Values
+  var trainName = "";
+  var destination = "";
+  var firstTrainTime = "";
+  var frequency = "";
 });
+
+//Capture Button Click
+$("#submit").on("click", function(event) {
+  event.preventDefault();
+
+  //Grab values from text-boxes
+  trainName = $("#trainName")
+    .val()
+    .trim();
+  destination = $("#destination")
+    .val()
+    .trim();
+  firstTrainTime = $("#firstTrainTime")
+    .val()
+    .trim();
+  frequency = $("#frequency")
+    .val()
+    .trim();
+
+  //Code to set values in the database
+  database.ref().set({
+    train_name: trainName,
+    destination: destination,
+    first_train_time: firstTrainTime,
+    frequency: frequency
+  });
+});
+
+//Firebase listens to any changes in the app
+firebase
+  .database()
+  .ref()
+  .on("value", function(snapshot) {
+    console.log(snapshot.val());
+  });
