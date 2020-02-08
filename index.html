@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Train Activity</title>
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!--Jumbotron-->
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to OC Train Station!</h1>
+      <p class="lead">
+        Please input the required information to schedule trains
+      </p>
+    </div>
+
+    <!--Destination flipper-->
+    <ul id="text">
+      <li>4032 London</li>
+      <li>5901 Paris</li>
+      <li>9954 Cologne</li>
+      <li>4204 St. Petersburg</li>
+    </ul>
+    <p>&#8593; Click</p>
+
+    <!--Current Train Schedule-->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card card-default">
+            <div class="card-header">
+              Current Train Schedule
+            </div>
+          </div>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (min)</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Trenton Express</th>
+                <td>Trenton</td>
+                <td>25</td>
+                <td>5:35 PM</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <th scope="row">Oregon Trail</th>
+                <td>Salem, Oregon</td>
+                <td>3600</td>
+                <td>01:39 PM</td>
+                <td>1154</td>
+              </tr>
+              <tr>
+                <th scope="row">Midnight Carriage</th>
+                <td>Philadelphia</td>
+                <td>15</td>
+                <td>05:35 PM</td>
+                <td>28</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!--Add Train Container-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card card-default">
+            <div class="card-header">
+              Add Train
+            </div>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="inputEmail4">Train Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="trainName"
+                    placeholder=""
+                  />
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="inputPassword4">Destination</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="destination"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress"
+                  >First Train Time (HH:mm - military time)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstTrain"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputAddress2">Frequency (min)</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="frequency"
+                  placeholder=""
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!--Script-->
+    <script src="moment.js"></script>
+  </body>
+</html>
